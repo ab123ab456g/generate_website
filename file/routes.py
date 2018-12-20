@@ -17,7 +17,7 @@ def registor():
 	return render_template('registor.html')
 
 @app.route('/user/<username>')
-def user():
+def user(username):
 	return render_template('user.html')
 
 @app.route('/edit')

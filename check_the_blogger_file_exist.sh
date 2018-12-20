@@ -51,6 +51,7 @@ echo 'finish'
 
 echo 'CheckFile in app/templates FILE \c'
 CheckFile blogger/app/templates/404.html
+CheckFile blogger/app/templates/500.html
 CheckFile blogger/app/templates/base.html
 CheckFile blogger/app/templates/home.html
 CheckFile blogger/app/templates/login.html
