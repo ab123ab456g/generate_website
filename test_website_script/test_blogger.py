@@ -13,6 +13,7 @@ class TestWebiste(object):
 		self.urlList = urlList
 		self.contentDict = contentDict
 		self.l = len(urlList)
+		self.Need = False
 		self.SetHowItWork()
 
 	def SetHowItWork(self):
@@ -35,7 +36,16 @@ class TestWebiste(object):
 			soup = BeautifulSoup(html_obj.text, 'html.parser')
 			content = self.contentDict[url]
 			if soup.h1.get_text() == content:
-				print( content + ' Ok')
+				if self.Need:
+					print( content + ' Ok')
+			else:
+				print(content + ' Fail')
+
+	def ChangeNeed(self):
+		if self.Need:
+			self.Need = False
+		else:
+			self.Need = True
 
 urlList = []
 urlList.append('http://127.0.0.1:5000')
@@ -55,7 +65,7 @@ contentList.append('home')
 contentList.append('login')
 contentList.append('registor')
 contentList.append('user')
-contentList.append('edit')
+contentList.append('edit profile')
 contentList.append('404')
 contentList.append('500')
 

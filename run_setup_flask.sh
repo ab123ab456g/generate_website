@@ -1,2 +1,2 @@
-sh setup_flask.sh blogger
+sh shell/setup_flask.sh blogger
 
