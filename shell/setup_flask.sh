@@ -4,7 +4,6 @@ python3 -m virtualenv venv
 mkdir app
 mkdir app/templates
 echo 'from app import app' > $1.py
-cp $1.py test.py
 
 echo 'python -m smtpd -n -c DebuggingServer localhost:8025' > start_mail_server.sh
 
