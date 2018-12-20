@@ -32,11 +32,12 @@ CheckFolder blogger/app/templates
 echo 'finish'
 
 echo 'Check FILE \c'
-CheckFile blogger/blogger.py
 CheckFile blogger/test.py
-CheckFile blogger/Gen_requirements.sh
-CheckFile blogger/install_requirements.sh
 CheckFile blogger/venv.env
+CheckFile blogger/blogger.py
+CheckFile blogger/Gen_requirements.sh
+CheckFile blogger/start_mail_server.sh
+CheckFile blogger/install_requirements.sh
 echo 'finish'
 
 

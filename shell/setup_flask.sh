@@ -6,6 +6,8 @@ mkdir app/templates
 echo 'from app import app' > $1.py
 cp $1.py test.py
 
+echo 'python -m smtpd -n -c DebuggingServer localhost:8025' > start_mail_server.sh
+
 echo 'export FLASK_APP='$1.py > venv.env
 
 cp ../file/__init__.py app/__init__.py
