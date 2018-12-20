@@ -33,6 +33,8 @@ class TestWebiste(object):
 	def checkUrlWork(self, url):
 		if self.howItWork:
 			html_obj = requests.get(url)
+			if '/500' in url:
+				html_obj = requests.post(url)
 			soup = BeautifulSoup(html_obj.text, 'html.parser')
 			content = self.contentDict[url]
 			if soup.h1.get_text() == content:
@@ -56,7 +58,7 @@ urlList.append('http://127.0.0.1:5000/registor')
 urlList.append('http://127.0.0.1:5000/user/test_user')
 urlList.append('http://127.0.0.1:5000/edit')
 urlList.append('http://127.0.0.1:5000/404')
-urlList.append('http://127.0.0.1:5000/500')
+#urlList.append('http://127.0.0.1:5000/500')
 
 contentList = []
 contentList.append('home')
@@ -67,9 +69,10 @@ contentList.append('registor')
 contentList.append('user')
 contentList.append('edit profile')
 contentList.append('404')
-contentList.append('500')
+#contentList.append('500')
 
 
 contentDict = dict(zip(urlList,contentList))
 t = TestWebiste(urlList, contentDict)
 t.checkAllUrlWork()
+
